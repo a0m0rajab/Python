@@ -80,13 +80,26 @@
 #except:
 #    print("Error ,please enter numeric input")
 
-#while True:
+#try:
+# while True:
 #    line=input(' > ')
-#    if line=='done':
-#      break
+ #   line=int(input(' > '))
+#    if line==0:
+#     break
 #    print(line)
-#print('Done ! ')
-
+# print('Done ! ')
+#except:
+# print(" only you")
 #for i in [5,4,3,2,1] :
 #    print(i)
 #print('done')
+#n=0
+#k="mahmut"
+#while n<len(k):
+#     print("turk",n)
+#     n=n+1
+#print("bitti")
+
+greet ="Hello WORD"
+zap=greet.upper()
+print(zap)
