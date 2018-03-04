@@ -107,18 +107,21 @@
 
 
 # python  dersten sonraki calismalar 
-#fp=open("romeo.txt")
-#my_lst = list()
-#my_lst =[]
-#for my_line in fp:
-#   my_lst2 = my_line.strip()
-#    my_w = my_lst2.split()
- #   my_lst.extend(my_w)
-#my_lst.sort()
-#print (my_lst)
+fp=open("romeo.txt")
+my_lst = list()
+my_lst =[]
+for my_line in fp:
+    my_lst2 = my_line.strip()
+    my_w = my_lst2.split()
+    my_lst.extend(my_w)
+my_lst.sort()
+my_new_list=[]
+for n in my_lst :
+    if n not in my_new_list :
+        my_new_list.append(n)
+print(my_new_list)
 #output
 #['Arise', 'But', 'It', 'Juliet', 'Who', 'already', 'and', 'and', 'and', 'breaks', 'east', 'envious', 'fair', 'grief', 'is', 'is', 'is', 'kill', 'light', 'moon', 'pale', 'sick', 'soft', 'sun', 'sun', 'the', 'the', 'the', 'through', 'what', 'window', 'with', 'yonder']
-
 word = "python"
 h =0
 for harf in word :
@@ -309,13 +312,13 @@ count =0
 harflar=[]
 for k in filelist:
       #birinci index buarda aliyoru
-         harf=filelist[0]
+         harf=k[0]
       #sonra buarda harf buyuk yapiyorum
          harf=harf.upper()
          if harf not in harflar:
             count=0
          #eger burada yok ise  o zaman liste ekliyor
-           harflar.append(harf)
+            harflar.append(harf)
             for i in filelist:
            #gerck listeye bakip  orada  harfini sayisi artliyor
                if i[0].upper() == harf:
