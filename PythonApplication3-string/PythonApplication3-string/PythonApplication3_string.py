@@ -348,3 +348,68 @@ for k in filelist:
 #P count is  2
 #Q count is  1
 #— count is  1
+
+#pyhtondaki dict
+my_dict={}
+#diksyoun pyhtonde oluşturmek icin kullanilan yetiyor 
+my_dict={"Abderrhman":0,"Abdellatif":1}
+#1 yontemi {object , key }
+my_dict["omer"]=3
+#2 yontemi []=keyini olsun
+print(my_dict)
+#output
+#{'Abderrhman': 0, 'Abdellatif': 1, 'omer': 3}
+my_dict["ense"]=5
+print(my_dict)
+# 1 yontemi listeye ekleme 
+names_list=[my_dict.keys()]
+print(names_list)
+#output
+#[dict_keys(['Abderrhman', 'Abdellatif', 'omer', 'ense'])]
+#2 yontemi listeye ekleme
+my_list_dict=[]
+for p in names_list :
+      my_list_dict.append(p)     
+print(my_list_dict)    
+#for skilnde yapmak istersek
+seq={x : pow(x,2) for x in range(10)}
+print("power almak icin ","\n",seq)
+#output
+#power almak icin  
+#{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+#burada her rakemini keyinin pow 2 olsun istedim
+
+#eger tum elemnleri baska yola atmak istersem boyle oluyor
+kopya_list=seq.copy()
+print(kopya_list)
+#output 
+#{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+#eger silmek istyorsam boyle olsun 
+
+#kopya_list.clear()
+#print(kopya_list)
+#output
+#{}
+print()
+#get valunu keyini gettiriyor
+get_olsun=my_dict.get("ense")
+print(my_dict)
+print("ense keyini ----> ",get_olsun)
+#output
+#{'Abderrhman': 0, 'Abdellatif': 1, 'omer': 3, 'ense': 5}
+#ense keyini ----> 5
+setdefault_dict=my_dict.setdefault("Taha",64)
+print(my_dict)
+my_dict["hacar"]=87
+print(my_dict)
+#output
+#{'Abderrhman': 0, 'Abdellatif': 1, 'omer': 3, 'ense': 5, 'Taha': 64}
+#{'Abderrhman': 0, 'Abdellatif': 1, 'omer': 3, 'ense': 5, 'Taha': 64, 'hacar': 87}
+#list yenilemek icin  kullanir
+my_dict.update(seq)
+print(my_dict)
+#{'Abderrhman': 0, 'Abdellatif': 1, 'omer': 3, 'ense': 5, 'Taha': 64, 'hacar': 87, 0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36, 7: 49, 8: 64, 9: 81}
+
+
