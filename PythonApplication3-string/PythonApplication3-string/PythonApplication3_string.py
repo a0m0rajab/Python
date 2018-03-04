@@ -324,6 +324,15 @@ for k in filelist:
                if i[0].upper() == harf:
                   count+=1
             print(harf,"count is ",str(count))
+new_my_dict={}           
+for c in filelist:
+    harf=c[0]
+    harf=harf.upper()
+    if harf in new_my_dict:
+        new_my_dict[harf]+=1
+    else:
+        new_my_dict[harf]=1
+print(new_my_dict)  
 
 #output
 #['WASHINGTON', '—', 'George', 'Nader,', 'a', 'Lebanese-American', 'busine', 'ssman,', 'has', 'hovered', 'on', 'the', 'fringes', 'of', 'international', 'diplomacy', 'for', 'three', 'decad', 'es.', 'He', 'was', 'back-channel', 'negotiator', 'with', 'Syria', 'during', 'Clinton', 'administration,', 'reinvented', 'himself', 'as', 'an', 'Mr.', 'Nader', 'is', 'now', 'focus', 'investigation', 'by', 'Ro', 'bert', 'S.', 'Mueller', 'III,', 'special', 'counsel.', 'In', 'recent', 'weeks,', 'Mueller’s', 'i', 'nvestigators', 'have', 'questioned', 'and', 'pressed', 'witnesses', 'information', 'about', 'any', 'possible', 'attempts', 'The', 'investigators', 'also', 'asked', 'Nader’s'] 
@@ -348,6 +357,9 @@ for k in filelist:
 #P count is  2
 #Q count is  1
 #— count is  1
+
+#{'C': 2, 'G': 1, 'H': 5, 'I': 8, 'L': 1, 'M': 3, 'N': 6, 'R': 3, 'S': 4, 'T': 3, 'W': 5, 'A': 10, 'B': 4, 'D': 3, 'E': 1, 'F': 3, 'O': 2, 'P': 2, 'Q': 1, '—': 1}
+
 
 #pyhtondaki dict
 my_dict={}
