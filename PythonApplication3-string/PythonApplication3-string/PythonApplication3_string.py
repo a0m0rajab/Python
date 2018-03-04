@@ -324,3 +324,27 @@ for k in filelist:
                if i[0].upper() == harf:
                   count+=1
             print(harf,"count is ",str(count))
+
+#output
+#['WASHINGTON', '—', 'George', 'Nader,', 'a', 'Lebanese-American', 'busine', 'ssman,', 'has', 'hovered', 'on', 'the', 'fringes', 'of', 'international', 'diplomacy', 'for', 'three', 'decad', 'es.', 'He', 'was', 'back-channel', 'negotiator', 'with', 'Syria', 'during', 'Clinton', 'administration,', 'reinvented', 'himself', 'as', 'an', 'Mr.', 'Nader', 'is', 'now', 'focus', 'investigation', 'by', 'Ro', 'bert', 'S.', 'Mueller', 'III,', 'special', 'counsel.', 'In', 'recent', 'weeks,', 'Mueller’s', 'i', 'nvestigators', 'have', 'questioned', 'and', 'pressed', 'witnesses', 'information', 'about', 'any', 'possible', 'attempts', 'The', 'investigators', 'also', 'asked', 'Nader’s'] 
+#['Clinton', 'George', 'He', 'III,', 'In', 'Lebanese-American', 'Mr.', 'Mueller', 'Mueller’s', 'Nader', 'Nader,', 'Nader’s', 'Ro', 'S.', 'Syria', 'The', 'WASHINGTON', 'a', 'about', 'administration,', 'also', 'an', 'and', 'any', 'as', 'asked', 'attempts', 'back-channel', 'bert', 'busine', 'by', 'counsel.', 'decad', 'diplomacy', 'during', 'es.', 'focus', 'for', 'fringes', 'has', 'have', 'himself', 'hovered', 'i', 'information', 'international', 'investigation', 'investigators', 'is', 'negotiator', 'now', 'nvestigators', 'of', 'on', 'possible', 'pressed', 'questioned', 'recent', 'reinvented', 'special', 'ssman,', 'the', 'three', 'was', 'weeks,', 'with', 'witnesses', '—'] 
+#C count is  2
+#G count is  1
+#H count is  5
+#I count is  8
+#L count is  1
+#M count is  3
+#N count is  6
+#R count is  3
+#S count is  4
+#T count is  3
+#W count is  5
+#A count is  10
+#B count is  4
+#D count is  3
+#E count is  1
+#F count is  3
+#O count is  2
+#P count is  2
+#Q count is  1
+#— count is  1
