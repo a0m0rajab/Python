@@ -107,15 +107,15 @@
 
 
 # python  dersten sonraki calismalar 
-fp=open("romeo.txt")
-my_lst = list()
-my_lst =[]
-for my_line in fp:
-    my_lst2 = my_line.strip()
-    my_w = my_lst2.split()
-    my_lst.extend(my_w)
-my_lst.sort()
-print (my_lst)
+#fp=open("romeo.txt")
+#my_lst = list()
+#my_lst =[]
+#for my_line in fp:
+#   my_lst2 = my_line.strip()
+#    my_w = my_lst2.split()
+ #   my_lst.extend(my_w)
+#my_lst.sort()
+#print (my_lst)
 #output
 #['Arise', 'But', 'It', 'Juliet', 'Who', 'already', 'and', 'and', 'and', 'breaks', 'east', 'envious', 'fair', 'grief', 'is', 'is', 'is', 'kill', 'light', 'moon', 'pale', 'sick', 'soft', 'sun', 'sun', 'the', 'the', 'the', 'through', 'what', 'window', 'with', 'yonder']
 
@@ -265,3 +265,59 @@ tatili=[(j,pow(j,2)) for j in num]
 print(tatili)
 #output
 #[(10, 100), (5, 25), (78, 6084), (8, 64), (4, 16)]
+
+
+
+#ikinci quiz cevabi 
+#/////////////////////////////////////////////////////////////////
+#file=open("haber.txt")
+file=open("haber.txt")
+#bir dosya actim
+filelist = []
+#listimi ekledim 
+for line in file :
+    #dosyadaki yazdirmak icin kullanilir 
+    #print(line)
+    #burada dosyanin  kelimleri burada listte ekledim
+    #filelist.append(line)
+    my_list=line.split()
+    #split burada her satir bir listte ekliyor
+    #yani  her satir alip () --> nullin gorenen kadar
+    #ondan sonra her kilmenin ayir ayir bolumup bir list
+    #sklinde gosteriyor
+    #print(my_list)
+    #output
+    #birinici satir icin  
+    #WASHINGTON — George Nader, a Lebanese-American busine --> bir satir
+    #['WASHINGTON', '—', 'George', 'Nader,', --> liste sekilde eklendi
+    #'a', 'Lebanese-American', 'busine']
+    for w in my_list:
+     #burada bakiyorum listte var mi yok mi 
+     #eger var ise eklemeyceck 
+     #yok ise ekler
+     #boylece ayine kilme eklemez  
+        if w not in filelist:
+            filelist.append(w)
+              
+print(filelist,"\n")
+#sirlama yapmak isterim
+filelist.sort()
+print(filelist,"\n")
+#listteki ikincici elmeneyi yazdirmak icin  
+#print(filelist[1])
+count =0
+harflar=[]
+for k in filelist:
+      #birinci index buarda aliyoru
+         harf=filelist[0]
+      #sonra buarda harf buyuk yapiyorum
+         harf=harf.upper()
+         if harf not in harflar:
+            count=0
+         #eger burada yok ise  o zaman liste ekliyor
+           harflar.append(harf)
+            for i in filelist:
+           #gerck listeye bakip  orada  harfini sayisi artliyor
+               if i[0].upper() == harf:
+                  count+=1
+            print(harf,"count is ",str(count))
