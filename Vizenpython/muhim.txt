@@ -1,0 +1,6 @@
+Kibana 
+data model entity 
+lattitude longitude centroid 
+elastik search 
+kibana map widgets 
+data CSV 
