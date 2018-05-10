@@ -1,17 +1,21 @@
-from tkinter import *
+from tkinter import  *
 from tkinter.filedialog import askdirectory
 import tkinter as tk
+import subprocess  #to execute command in python script
 root = Tk()
 frame = tk.Frame(root)
+
+
+
+root.title("Google Image Downloader")
 root.geometry("500x400")
 text2 = Text(root, height=5, width=50)#size hesaplama
 scroll = Scrollbar(root,command=text2.yview)#text2 her dafe cagirmasini
 text2.configure(yscrollcommand=scroll.set)#nasil olacagini yazdim 
 text2.tag_configure('bold_italics', font=('Arial', 12, 'bold', 'italic')) 
 text2.tag_configure('big', font=('Verdana', 14))#cizge nasil olacagini bilter
-text2.tag_configure('color', foreground='#476042', font=('Tempus Sans ITC', 12, 'bold'))
-text2.tag_bind('follow', '<1>', lambda e, t=text2: t.insert(END, "Not now, maybe later! "))
 text2.insert(END,'         Google Image Downloader  ', 'big')
+
 
 
 var = StringVar()
@@ -22,8 +26,9 @@ var4=StringVar()
 keywordvar=StringVar()
 
 
-keywordlabel= Label( root, textvariable=keywordvar, relief=RAISED )#yazacak olna lab
-label = Label( root, textvariable=var, relief=RAISED )#yazacak olna lab
+
+#keywordlabel= Label( root, textvariable=keywordvar, relief=RAISED )#yazacak olna lab
+#label = Label( root, textvariable=var, relief=RAISED )#yazacak olna lab
 label1 = Label( root, textvariable=var1, relief=RAISED )#Choose Path
 label2 = Label( root, textvariable=var2, relief=RAISED )#Not if not seleceted you will got Default as
 label3 = Label( root, textvariable=var3, relief=RAISED )#Not if not seleceted you will got Default as
@@ -31,27 +36,52 @@ label4= Label( root, textvariable=var4, relief=RAISED )#key  word
 
 
 
+# label 1 ve label 3
+
+e = StringVar()#bu callback  label icin  kullandim chose path icin 
+Entry(root, width=70, textvariable=e).place(y=113,x=40)#text  icin 
+e.set(" ")
 
 
-def callback():
-    name= askdirectory() #dosya acmak icin  
-    var.set(name)
 
+
+k = StringVar()#bu test  fonksiyon iciin  icin  kullandim chose path icin 
+Entry(root, textvariable=k,width=40,fg="blue",selectbackground='violet').place(y=160,x=135)#text  icin 
+
+
+
+def callback():   
+    name= askdirectory() #dosya acmak icin   ve yolu almak icin 
+    e.set(name)#burda text  yazdiriyorum    
+    
+    
 text2.pack()
 
-def test():
-    
-	keywordvar.set("Hello word")
+
+
+
+def  fetch():#ikinci fonksiyon  bir harf yazmak icin  
+    subprocess.Popen(k.get(), shell=True) #burada value alip  gonderiyor 
+
+
 
 
 var1.set("Choose Path")
+
 var3.set(" Key word ")
+
 label1.place(y=90)
-Button(text="Path", command=callback, fg="red").pack()
-label.pack()
+
+Button(text="Path", command=callback, width=16 ,background="red").pack()
+#label.pack()
+
+label3.place(y=160)   
+
+Button(text=' Download ', command=fetch, 
+        width=16,background="green").place(y=180,x=190)#burada botton
+#keywordlabel.pack()
 
 
-label3.place(y=130)
-Button(text=' key word ', command=test, fg="green").pack()
-keywordlabel.pack()
+
+
 mainloop()
