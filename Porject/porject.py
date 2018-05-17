@@ -24,6 +24,7 @@ text2.insert(END,'         Google Image Downloader  ', 'big')
 
 
 
+
 var = StringVar()
 var3 = StringVar()#key word 
 var1 = StringVar()#Choose Path
@@ -70,9 +71,9 @@ text2.pack()
 def  fetch():#ikinci fonksiyon  bir harf yazmak icin  
     
     if path.get() != "":
-        pythonCode =subprocess.Popen("py google_images_download.py  -k" + keywords.get() +" -o "+ path.get() ,  shell=True ) #burada value alip  gonderiyor 
+        pythonCode =subprocess.Popen("py google_images_download.py  -k \"" + keywords.get() +"\" -o "+ path.get() ,  shell=True ) #burada value alip  gonderiyor 
     else :
-        pythonCode =subprocess.Popen("py google_images_download.py  -k" + keywords.get() ,shell=True)
+        pythonCode =subprocess.Popen("py google_images_download.py  -k\"" + keywords.get()+"\"" ,shell=True)
     
  
 
